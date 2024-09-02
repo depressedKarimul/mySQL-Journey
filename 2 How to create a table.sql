@@ -1,58 +1,99 @@
--- CREATE DATABASE myDB;
+-- Create a new database named 'myDB'
+CREATE DATABASE myDB;
 
--- USE myDB;
+-----------------------------------------------------------
 
--- CREATE TABLE employees(
+-- Switch to using the 'myDB' database
+USE myDB;
 
--- employee_id INT,
--- first_name VARCHAR(50),
--- last_name VARCHAR(50),
--- hourly_pay DECIMAL(5,2),
--- hire_date DATE
+----------------------------------------------------------------
 
--- );
+-- Create a table called 'employees' with columns for employee details
+CREATE TABLE employees(
+employee_id INT,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+hourly_pay DECIMAL(5,2),
+hire_date DATE
+);
 
--- SELECT * FROM employees;
+----------------------------------------------------------------
 
--- RENAME TABLE employees TO workers;
--- RENAME TABLE workers TO employees;
+Select all data from the 'employees' table
+SELECT * FROM employees;
 
--- DROP TABLE employees;
+---------------------------------------------------------------------
 
--- ALTER TABLE employees 
--- ADD phone_number VARCHAR(15);
+-- Rename the 'employees' table to 'workers'
+RENAME TABLE employees TO workers;
 
+--------------------------------------------------------------------
 
--- SELECT * FROM employees;
+-- Rename the 'workers' table back to 'employees'
+RENAME TABLE workers TO employees;
 
--- ALTER TABLE employees 
--- RENAME COLUMN phone_number to email;
+--------------------------------------------------------------------
 
--- SELECT * FROM employees;
+-- Delete the 'employees' table
+DROP TABLE employees;
 
+-----------------------------------------------------------------------
 
--- ALTER TABLE employees
--- MODIFY COLUMN email VARCHAR(100);
+-- Add a new column 'phone_number' to the 'employees' table
+ALTER TABLE employees 
+ADD phone_number VARCHAR(15);
 
+-------------------------------------------------------------------------
 
+-- Select all data from the 'employees' table
+SELECT * FROM employees;
 
--- ALTER TABLE employees
--- MODIFY email VARCHAR(100)
--- AFTER last_name;
+---------------------------------------------------------------
 
+-- Rename the 'phone_number' column to 'email'
+ALTER TABLE employees 
+RENAME COLUMN phone_number to email;
 
--- SELECT * FROM employees;
+-------------------------------------------------------------------
 
+-- Select all data from the 'employees' table
+SELECT * FROM employees;
 
--- ALTER TABLE employees
--- MODIFY email VARCHAR(100)
--- FIRST;
+----------------------------------------------------------------------
 
--- SELECT * FROM employees;
+-- Change the 'email' column to allow up to 100 characters
+ALTER TABLE employees
+MODIFY COLUMN email VARCHAR(100);
 
+-----------------------------------------------------------------------
 
+-- Move the 'email' column to be after the 'last_name' column
+ALTER TABLE employees
+MODIFY email VARCHAR(100)
+AFTER last_name;
 
--- ALTER TABLE employees
--- DROP COLUMN email;
+-------------------------------------------------------------------
 
+-- Select all data from the 'employees' table
+SELECT * FROM employees;
+
+----------------------------------------------------------------------------
+
+-- Move the 'email' column to be the first column in the table
+ALTER TABLE employees
+MODIFY email VARCHAR(100)
+FIRST;
+
+-----------------------------------------------------------------------------
+
+-- Select all data from the 'employees' table
+SELECT * FROM employees;
+----------------------------------------------------------------------------
+
+-- Remove the 'email' column from the 'employees' table
+ALTER TABLE employees
+DROP COLUMN email;
+---------------------------------------------------------------------
+
+-- Select all data from the 'employees' table
 SELECT * FROM employees;
