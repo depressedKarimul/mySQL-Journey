@@ -77,3 +77,10 @@ SELECT CustomerID, CustomerName, City FROM customers WHERE CustomerName LIKE '%a
 
 -- This selects and shows customers where CustomerName contains the letter 'a' anywhere
 SELECT CustomerID, CustomerName, City FROM customers WHERE CustomerName LIKE '%a%';
+
+
+SELECT CustomerID, CustomerName, City       -- Selects the columns CustomerID, CustomerName, and City from the customers table
+FROM customers                              -- Specifies the table to query (customers)
+WHERE CustomerName LIKE '_M%';              -- Filters results where CustomerName starts with any single character, 
+                                            -- followed by 'M', and any sequence of characters after that
+
